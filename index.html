@@ -13,6 +13,60 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 </head>
 <body>
-    
+    <div class="background-image"></div>
+    <div class="content">
+    <section id="data-table">
+        <div class="container">
+            <div clas="row">
+                <table class="table table-bordered table-striped">
+                     <caption class="text-center"><h1>Train Schedule</h1></caption>
+                    <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (minutes)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <form>
+                    <div class="form-group">
+                        <label for="newTrainName">Train Name</label>
+                        <input type="text" class="form-control" id="newTrainName" placeholder="Name"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="newDestination">Destination</label>
+                        <input type="text" class="form-control" id="newDestination" placeholder="Destination"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="newFirstTrain">First Train Time [hh:mm (24 hr clock)</label>
+                        <input type="text" class="form-control" id="newFirstTrain" placeholder="First Train Time"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="newFrequency">Frequency (mm)</label>
+                        <input type="text" class="form-control" id="newFrequency" placeholder="Frequency"></input>
+                    </div>
+                    <button id="submitNewTrain" type="submit" class="btn btn-danger flat-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- Link to jQuery CDN  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript for this assignment  -->
+    <script src="./assets/javascript/trainjs.js"></script>
 </body>
 </html>
