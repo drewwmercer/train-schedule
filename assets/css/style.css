@@ -5,11 +5,22 @@ body {
 h1 {
   color: black;
   font-family: 'Zilla Slab Highlight', cursive;
+  text-shadow: 3px 3px 2px lightcyan;
 }
 
 td,
 .form-control {
   font-family: 'Archivo', sans-serif;
+}
+
+th {
+  text-align: center;
+}
+
+.form-group,
+th {
+  text-shadow: 2px 2px lightcyan;
+  font-size: 18px;
 }
 
 .content {
