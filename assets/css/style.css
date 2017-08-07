@@ -55,3 +55,7 @@ th {
 .table-hover tbody tr:hover th {
   background-color: lightcyan;
 }
+
+.btn {
+  box-shadow: 1px 1px lightcyan;
+}
