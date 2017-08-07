@@ -14,21 +14,20 @@ var database = firebase.database();
 var timeNow;
 
 database.ref().on("child_added", function(snapshot) {
-  // converts FIRST TRAIN TIME to unix
+  // convert FIRST TRAIN TIME to unix
   var firstTrain = moment(snapshot.val().firstTrain, "HH:mm").format("X");
-  // stores the frequency in a variable
+  // store frequency as a variable
   var frequency = snapshot.val().frequency;
-  // calculates the difference between the first train and the current time
+  // calculate the difference between the first train and the current time
   var difference = moment().diff(moment.unix(firstTrain), "minutes");
-  // calculates the times the train has arrived from first to now
+  // calculate the times the train has arrived from first to now
   var timeLeft = moment().diff(moment.unix(firstTrain), "minutes") % frequency;
-  // calculates the amount of minutes left
+  // calculate the amount of minutes left
   var mins = moment(frequency - timeLeft, "mm").format("mm");
-  // addes minutes to last arrival for next arrival
+  // add minutes to last arrival for next arrival
   var nextTrain = moment().add(mins, "m").format("hh:mm A");
 
   var newRow = $("<tr>");
-
   var newName = $("<td>");
   var newDestination = $("<td>");
   var newFrequency = $("<td>");
@@ -52,8 +51,8 @@ database.ref().on("child_added", function(snapshot) {
 
 $("#submitNewTrain").on("click", function(e) {
   e.preventDefault();
-  // grab the first train time convert to 24hr time
 
+  // grab the first train time convert to 24hr time
   var inputTrain = $("#newTrainName").val();
   var inputDestination = $("#newDestination").val();
   var inputFirstTrain = moment(
@@ -62,7 +61,6 @@ $("#submitNewTrain").on("click", function(e) {
   ).format("HH:mm");
   var inputFrequency = $("#newFrequency").val().trim();
 
-  // console.log(inputFirstTrain);
   if (
     inputTrain.length > 0 &&
     inputDestination.length > 0 &&
